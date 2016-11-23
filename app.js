@@ -1,6 +1,6 @@
 (function() {
   var questions = [{
-    question: "Question 1: What is the name of the town the Gilmore Girls live in?",
+    question: "",
     choices: ["Gotham", "Hartford", "Stars Hollow", "Chilton"],
     correctAnswer: 2
     rightAnswerNote: "You have watched the show before..."
