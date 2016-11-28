@@ -6,20 +6,19 @@
 <body>
 <div id="title">
 	<h1>Gilmore Girls Quiz!</h1>
+	<h2>Do you know your Gilmore trivia?</h2>
 </div>
-<div>
-	<h2>In honor of the new Netflix series being released November 2016, I'm going to do a little quiz of Gilmore Girls trivia. Click below to get started.</h2>
+<div class="question">
+<p class="question"></p>
+    <ul class="choices">
+      <input type="radio" name="choice" value="0">a <label id="a">option a</label><br/>
+      <input type="radio" name="choice" value="1">b <label id="b">option b</label><br/>
+      <input type="radio" name="choice" value="2">c <label id="c">option c</label><br/>
+      <input type="radio" name="choice" value="3">d <label id="d">option d</label><br/>
+    </ul>
 </div>
-<div class="question"><h3>
-Question 1: What is the name of the town the Gilmore Girls live in?</h3></div>
-<div class="choices">
-<input type="radio" value="a">a) Gotham<br>
-<input type="radio" value="b">b) Hartford<br>
-<input type="radio" value="c">c) Stars Hollow<br>
-<input type="radio" value="d">d)Chilton<br>
-</div>
-<div class="button">
-	<button>Next</button>
-</div>
+<button class="submit">submit</button>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
