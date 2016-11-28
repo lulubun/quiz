@@ -8,16 +8,18 @@
 	<h1>Gilmore Girls Quiz!</h1>
 	<h2>Do you know your Gilmore trivia?</h2>
 </div>
-<div class="question">
+<form id="quiz">
 <p class="question"></p>
-    <ul class="choices">
-      <input type="radio" name="choice" value="0">a <label id="a">option a</label><br/>
-      <input type="radio" name="choice" value="1">b <label id="b">option b</label><br/>
-      <input type="radio" name="choice" value="2">c <label id="c">option c</label><br/>
-      <input type="radio" name="choice" value="3">d <label id="d">option d</label><br/>
-    </ul>
-</div>
-<button class="submit">submit</button>
+<ul class="choices">
+    <input type="radio" name="choice" value="0"> <label id="a">option a</label><br/>
+    <input type="radio" name="choice" value="1"> <label id="b">option b</label><br/>
+    <input type="radio" name="choice" value="2"> <label id="c">option c</label><br/>
+    <input type="radio" name="choice" value="3"> <label id="d">option d</label><br/>
+</ul>
+</form>
+<p class="commentary"></p>
+<button id="submit" class="firstButton">submit</button>
+<h5>You've answered <span class="numAns">0</span> out of 5 questions so far, and got <span class="numRight">0</span> correct.</h5>
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="app.js"></script>
 </body>

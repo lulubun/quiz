@@ -28,12 +28,50 @@ state.questionArray = [{
 
 function displayQuestion() {
   $(".question").text(state.questionArray[state.currentQuestion].question);
-  $("#a").text("yo mama");
+  $("#a").text(state.questionArray[state.currentQuestion].choices[0]);
   $("#b").text(state.questionArray[state.currentQuestion].choices[1]);
   $("#c").text(state.questionArray[state.currentQuestion].choices[2]);
   $("#d").text(state.questionArray[state.currentQuestion].choices[3]);
 };
 
+function checkAnswer() {
+  $('.numAns').text(state.currentQuestion+1);
+  if ($('input[name=choice]:checked', '#quiz').val()==state.questionArray[state.currentQuestion].correctAnswer) {
+    state.numRight+=1;
+    $('.commentary').text("Correct!");
+    $('.numRight').text(state.numRight);
+  }
+  else {
+    $('.commentary').text("Nope!")
+
+  };
+};
+
+function nextQuestion() {
+  state.currentQuestion+=1;
+  displayQuestion();
+}
+
 $(document).ready(function() {
   displayQuestion();
+
+$('form').on('click', '.firstButton', function(event) {
+  checkAnswer();
+  state.curQuestion++;
+  $(this).toggleClass("firstButton", false);
+  $(this).toggleClass("secondButton", true);    
+  });
+
+  $("form").on("click", ".secondButton", function(event) {
+    displayQuestion();
+    $(this).toggleClass("firstButton", true);
+    $(this).text("Submit Answer");
+    $(this).toggleClass("secondButton", false);
+  });
+
+});
+
+$('.secondButton').click(function(event) {
+  console.log("secondButton")
+  nextQuestion();
 });
