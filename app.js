@@ -56,17 +56,26 @@ $(document).ready(function() {
   displayQuestion();
 
 $('form').on('click', '.firstButton', function(event) {
+  event.preventDefault();
   checkAnswer();
-  state.curQuestion++;
+  state.currentQuestion++;
+  if (state.currentQuestion==state.questionArray.length) {
+    $(this).css('display', 'none');
+    return;
+  }
   $(this).toggleClass("firstButton", false);
-  $(this).toggleClass("secondButton", true);    
+  $(this).toggleClass("secondButton", true);
+  $(this).text('Next');    
   });
 
   $("form").on("click", ".secondButton", function(event) {
+    event.preventDefault();
     displayQuestion();
     $(this).toggleClass("firstButton", true);
     $(this).text("Submit Answer");
     $(this).toggleClass("secondButton", false);
+    $('.commentary').text('');
+    $("input:checked").removeAttr("checked");
   });
 
 });
